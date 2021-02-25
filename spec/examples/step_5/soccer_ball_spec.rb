@@ -4,7 +4,7 @@
 RSpec.describe Examples::Step5::SoccerBall do
   let(:ball) { Examples::Step5::SoccerBall.new }
 
-  it_behaves_like "a game ball" do
+  it_behaves_like "a ball that can be inflated" do
     let(:game_ball) { ball }
   end
 

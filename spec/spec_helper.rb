@@ -13,8 +13,8 @@ RSpec.configure do |config|
   end
 end
 
-# Used in Step 5
-RSpec.shared_context "a game ball" do
+# Used in Step 5 & Step 6
+RSpec.shared_context "a ball that can be inflated" do
   context "before inflated" do
     it "is empty" do
       expect(game_ball.full?).to eq(false)
@@ -39,6 +39,58 @@ RSpec.shared_context "a game ball" do
 
     it "is not full enough" do
       expect(game_ball.full?).to eq(false)
+    end
+  end
+end
+
+# Used in Step 6
+RSpec.shared_context "a ball that deflates as kicked" do
+  context "when kicking" do
+    context "a little bit" do
+      before do
+        game_ball.inflate
+        game_ball.kick(4)
+      end
+
+      it "is full enough" do
+        expect(game_ball.full?).to eq(true)
+      end
+    end
+
+    context "a lot" do
+      before do
+        game_ball.inflate
+        game_ball.kick(inflation_limit)
+      end
+
+      it "is full enough" do
+        expect(game_ball.full?).to eq(true)
+      end
+    end
+
+    context "until it is too flat to play" do
+      before do
+        game_ball.inflate
+        game_ball.kick(inflation_limit + 1)
+      end
+
+      it "is not full enough" do
+        expect(game_ball.full?).to eq(false)
+      end
+    end
+  end
+end
+
+# Used in Step 6
+RSpec.shared_context "a nostalgic ball" do
+  context "sensory impact" do
+    it "like nostalgia" do
+      expect(ball.smell).to eq(nostalgic_smell)
+    end
+
+    it "like it should" do
+      sound = ball.kick
+      expect(sound).to eq(nostalgic_kick_sound)
     end
   end
 end

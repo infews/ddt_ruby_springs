@@ -23,11 +23,17 @@
 - Step 5
   - Add shared example group
     - but is this indirect worth it?
-
+    - would not over-parameterize, though you COULD
+- Step 6
+  - Fully parameterized shared context
+  
 ## Test extractions differently
 
-- Step 6
-  - Add bare ball spec
+- Step 7
+  - Extract Inflatable Ball class
+  - Keep shared examples
+    
+- Step 8
   - Add Game spec as integration, test whole interface with each    
 
 
