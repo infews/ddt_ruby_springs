@@ -1,5 +1,6 @@
 #  Step 4:
 # - add a playground ball
+# - moves kicking/inflation into its own context
 
 RSpec.describe Examples::Step4::PlaygroundBall do
   let(:ball) { Examples::Step4::PlaygroundBall.new }
@@ -18,9 +19,12 @@ RSpec.describe Examples::Step4::PlaygroundBall do
     it "is full" do
       expect(ball.full?).to eq(true)
     end
+  end
 
-    context "when kicking" do
+  context "when kicking" do
+    context "a little bit" do
       before do
+        ball.inflate
         ball.kick(4)
       end
 
@@ -29,8 +33,9 @@ RSpec.describe Examples::Step4::PlaygroundBall do
       end
     end
 
-    context "when kicking a bunch" do
+    context "a lot" do
       before do
+        ball.inflate
         ball.kick(2000)
       end
 
@@ -39,8 +44,9 @@ RSpec.describe Examples::Step4::PlaygroundBall do
       end
     end
 
-    context "when kicking a very large amount" do
+    context "until too flat to play" do
       before do
+        ball.inflate
         ball.kick(2001)
       end
 
@@ -48,16 +54,27 @@ RSpec.describe Examples::Step4::PlaygroundBall do
         expect(ball.full?).to eq(false)
       end
     end
+  end
 
-    context "when pulling out of storage" do
-      before do
-        ball.remove_from_storage
-      end
+  context "when pulling out of storage" do
+    before do
+      ball.inflate
+      ball.remove_from_storage
+    end
 
-      it "is not full enough" do
-        expect(ball.full?).to eq(false)
-      end
+    it "is not full enough" do
+      expect(ball.full?).to eq(false)
+    end
+  end
+
+  context "sensory impact" do
+    it "like nostalgia" do
+      expect(ball.smell).to eq("third grade")
+    end
+
+    it "like it should" do
+      sound = ball.kick
+      expect(sound).to eq("PING!")
     end
   end
 end
-

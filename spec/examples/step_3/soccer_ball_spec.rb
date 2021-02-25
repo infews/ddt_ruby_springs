@@ -62,4 +62,3 @@ RSpec.describe Examples::Step3::SoccerBall do
     end
   end
 end
-

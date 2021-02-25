@@ -3,11 +3,12 @@
 /.yardoc
 /_yardoc/
 /coverage/
-/doc/
 /pkg/
 /spec/reports/
 /tmp/
 /vendor/
+/doc/img
+/doc/*.pdf
 
 .DS_Store
 # rspec failure tracking

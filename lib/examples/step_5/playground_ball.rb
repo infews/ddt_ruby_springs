@@ -1,6 +1,6 @@
 module Examples
-  module Step4
-    class SoccerBall
+  module Step5
+    class PlaygroundBall
       def initialize
         @air = 0
       end
@@ -18,16 +18,11 @@ module Examples
       end
 
       def kick(count = 1)
-        if count > 5000
+        if count > 2000
           @air = 0
         else
-          @air -= count * 0.002
+          @air -= count * 0.005
         end
-        "THUNK!"
-      end
-
-      def smell
-        "neutral"
       end
     end
   end
