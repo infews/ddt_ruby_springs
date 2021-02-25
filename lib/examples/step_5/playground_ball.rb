@@ -23,6 +23,12 @@ module Examples
         else
           @air -= count * 0.005
         end
+
+        "PING!"
+      end
+
+      def smell
+        "third grade"
       end
     end
   end

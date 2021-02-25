@@ -12,3 +12,33 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+# Used in Step 5
+RSpec.shared_context "a game ball" do
+  context "before inflated" do
+    it "is empty" do
+      expect(game_ball.full?).to eq(false)
+    end
+  end
+
+  context "after inflated" do
+    before do
+      game_ball.inflate
+    end
+
+    it "is full" do
+      expect(game_ball.full?).to eq(true)
+    end
+  end
+
+  context "when pulling out of storage" do
+    before do
+      game_ball.inflate
+      game_ball.remove_from_storage
+    end
+
+    it "is not full enough" do
+      expect(game_ball.full?).to eq(false)
+    end
+  end
+end
