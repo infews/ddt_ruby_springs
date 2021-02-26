@@ -1,5 +1,5 @@
 
-# [fit] BDD Best
+# [fit] Ruby Springs
 or
 ## [fit] Don't Desiccate Your Tests, Ruby Edition
 
@@ -16,8 +16,6 @@ Davis W. Frank
 Always a pivot.
 
 ^ I'm Davis. I'll be your blatherer today. You can find my ravings here.
-
-^ I met JR at Pivotal and we worked on some fun projects together. I'm thrilled to help you all out today.
 
 ^ I have a little bit of intro, some toy examples, and then I'm happy to take ?'s
 
@@ -95,7 +93,7 @@ Always a pivot.
 end
 ```
 
-(_Adapted from [Emoji Driven Development][edd] by Tom Lord_) 
+##### _Adapted from [Emoji Driven Development in Ruby][edd] by Tom Lord_
 
 ^ When you see that old test code, it's not awful. But it's weird.
 
@@ -195,13 +193,13 @@ end
 
 ---
 
-> _Thanks!_
+# Thanks!
 
-![original](img/bt_typewriter.jpg)
+![original](img/ps_end.jpg)
 
 ---
 
-Citations
+- [Emoji-Driven Development in Ruby][edd]
+- 
 
 [edd]: https://medium.com/carwow-product-engineering/emoji-driven-development-in-ruby-2d54264f7b08
-
