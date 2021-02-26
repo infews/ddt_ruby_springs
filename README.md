@@ -1,4 +1,4 @@
-# Ruby Spring
+# "Ruby Springs"
 
 A "Tech Talk" presentation that adapts a blog post I wrote years ago called "Don't Desiccate your Tests" at the Pivotal Labs blog. 
 
@@ -24,11 +24,11 @@ The code is organized in 8 iterative steps. Each spec and implementation is scop
 # runs the entire suite
 > bundle exec rake                       
 
-# BASH (MacOS <= 10.14)
-> bundle exec rake step[1] # runs the specs for step 1, etc.
+# bash (MacOS <= 10.14)
+> bundle exec rake step[1] # runs the specs for step 1; (1..8).include?(step)
 
-# ZSH (MacOS > 10.15) 
-> noglob bundle exec rake step[1] # runs the specs for step 1, etc.
+# zsh (MacOS >= 10.15) 
+> noglob bundle exec rake step[1] # runs the specs for step 1; (1..8).include?(step)
 ```
 
 ## Step 1
