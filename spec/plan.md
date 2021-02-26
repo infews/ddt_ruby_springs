@@ -34,9 +34,11 @@
   - Keep shared examples
     
 - Step 8
-  - Add Game spec as integration, test whole interface with each    
+  - Test base class in isolation (mention module)
+  - minimal testing of child classes
+  - Add Game specs as integration, test whole interface with each    
 
-
+Re-write this somewhat narratively and put in README.md
 
 ---
 
