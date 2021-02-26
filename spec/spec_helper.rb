@@ -1,4 +1,3 @@
-require "bundler/setup"
 require "examples"
 
 RSpec.configure do |config|
@@ -77,20 +76,6 @@ RSpec.shared_context "a ball that deflates as kicked" do
       it "is not full enough" do
         expect(game_ball.full?).to eq(false)
       end
-    end
-  end
-end
-
-# Used in Step 6
-RSpec.shared_context "a nostalgic ball" do
-  context "sensory impact" do
-    it "like nostalgia" do
-      expect(ball.smell).to eq(nostalgic_smell)
-    end
-
-    it "like it should" do
-      sound = ball.kick
-      expect(sound).to eq(nostalgic_kick_sound)
     end
   end
 end

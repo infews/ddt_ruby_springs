@@ -25,10 +25,6 @@ module Examples
         end
         "THUNK!"
       end
-
-      def smell
-        "neutral"
-      end
     end
   end
 end

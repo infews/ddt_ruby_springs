@@ -1,6 +1,6 @@
 module Examples
-  module Step4
-    class SoccerBall
+  module Step7
+    class InflatableBall
       def initialize
         @air = 0
       end
@@ -17,13 +17,12 @@ module Examples
         @air -= 50
       end
 
-      def kick(count = 1)
-        if count > 5000
+      def deflate(kick_count, limit, factor)
+        if kick_count > limit
           @air = 0
         else
-          @air -= count * 0.002
+          @air -= kick_count * factor
         end
-        "THUNK!"
       end
     end
   end

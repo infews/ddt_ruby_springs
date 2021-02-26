@@ -1,8 +1,8 @@
-#  Step 6:
-# - more parameterized examples
+#  Step 7:
+# - no changes, just an implementation change
 
-RSpec.describe Examples::Step6::PlaygroundBall do
-  let(:ball) { Examples::Step6::PlaygroundBall.new }
+RSpec.describe Examples::Step7::PlaygroundBall do
+  let(:ball) { Examples::Step7::PlaygroundBall.new }
 
   it_behaves_like "a ball that can be inflated" do
     let(:game_ball) { ball }
