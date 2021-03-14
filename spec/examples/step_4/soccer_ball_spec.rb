@@ -64,7 +64,7 @@ RSpec.describe Examples::Step4::SoccerBall do
   end
 
   context "sensory impact" do
-    it "sounds firm" do
+    it "sounds like it should" do
       sound = ball.kick
       expect(sound).to eq("THUNK!")
     end

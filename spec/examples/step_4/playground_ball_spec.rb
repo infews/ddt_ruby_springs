@@ -64,11 +64,11 @@ RSpec.describe Examples::Step4::PlaygroundBall do
   end
 
   context "sensory impact" do
-    it "like nostalgia" do
+    it "awakens nostalgia" do
       expect(ball.smell).to eq("third grade")
     end
 
-    it "like it should" do
+    it "sounds like it should" do
       sound = ball.kick
       expect(sound).to eq("PING!")
     end

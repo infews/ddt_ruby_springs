@@ -25,25 +25,26 @@ RSpec.describe Examples::Step8::Game do
         expect(ball).to_not be_full
       end
     end
+  end
 
-    context "with a PlaygroundBall" do
-      let(:ball) { Examples::Step8::PlaygroundBall.new }
+  context "with a PlaygroundBall" do
+    let(:ball) { Examples::Step8::PlaygroundBall.new }
 
-      context "in a short game" do
-        let(:with_kick_count) { 1000 }
+    context "in a short game" do
+      let(:with_kick_count) { 1000 }
 
-        it "the ball stays full" do
-          expect(ball).to be_full
-        end
+      it "the ball stays full" do
+        expect(ball).to be_full
       end
+    end
 
-      context "in a long game" do
-        let(:with_kick_count) { 2500 }
+    context "in a long game" do
+      let(:with_kick_count) { 2500 }
 
-        it "the ball goes flat" do
-          expect(ball).to_not be_full
-        end
+      it "the ball goes flat" do
+        expect(ball).to_not be_full
       end
     end
   end
 end
+
