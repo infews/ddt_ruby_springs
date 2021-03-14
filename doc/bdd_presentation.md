@@ -20,8 +20,6 @@ Davis W. Frank
 # _dwfrank@gmail.com_
 # __Blogs__ _@ [dwf.bigpencil.net](https://dwf.bigpencil.net)_
 
-Always a pivot.
-
 ^ Most folks know me from being at Pivotal Labs forever, or as the co-author of Jasmine, a once popular JS BDD framework. 
 
 ^ But I've done some other things, too. Here are my social pointers & other ravings. 
@@ -230,7 +228,9 @@ end
 
 # Citations
 
+- Examples, docs, and this presentation live on [GitHub][repo]
 - [Emoji-Driven Development in Ruby][edd]
 - Lovingly borrowed fair use images from around the web :wink:
 
 [edd]: https://medium.com/carwow-product-engineering/emoji-driven-development-in-ruby-2d54264f7b08
+[repo]: https://github.com/infews/ddt_ruby_springs
