@@ -1,8 +1,3 @@
-#  Step 3:
-# - just use let?
-# - test names & content become more explicit, esp. with documentation formatter
-# - balance this with more lines, more indentation
-
 RSpec.describe Examples::Step3::SoccerBall do
   let(:ball) { Examples::Step3::SoccerBall.new }
 

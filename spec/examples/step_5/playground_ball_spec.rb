@@ -1,6 +1,3 @@
-#  Step 5:
-# - add a shared example group
-
 RSpec.describe Examples::Step5::PlaygroundBall do
   let(:ball) { Examples::Step5::PlaygroundBall.new }
 

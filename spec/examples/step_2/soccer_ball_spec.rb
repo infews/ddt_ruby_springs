@@ -1,6 +1,3 @@
-#  Step 2:
-# - explicit subject
-
 RSpec.describe Examples::Step2::SoccerBall do
   subject(:ball) { Examples::Step2::SoccerBall.new }
 

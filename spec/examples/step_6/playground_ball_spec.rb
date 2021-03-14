@@ -1,6 +1,3 @@
-#  Step 6:
-# - more parameterized examples
-
 RSpec.describe Examples::Step6::PlaygroundBall do
   let(:ball) { Examples::Step6::PlaygroundBall.new }
 

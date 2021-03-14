@@ -1,6 +1,3 @@
-#  Step 8:
-# - no longer re-testing super class
-
 RSpec.describe Examples::Step8::PlaygroundBall do
   let(:ball) { Examples::Step8::PlaygroundBall.new }
 

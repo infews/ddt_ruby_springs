@@ -1,6 +1,3 @@
-#  Step 7:
-# - no changes, just an implementation change
-
 RSpec.describe Examples::Step7::PlaygroundBall do
   let(:ball) { Examples::Step7::PlaygroundBall.new }
 

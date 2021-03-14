@@ -1,7 +1,3 @@
-#  Step 4:
-# - add a playground ball
-# - moves kicking/inflation into its own context
-
 RSpec.describe Examples::Step4::SoccerBall do
   let(:ball) { Examples::Step4::SoccerBall.new }
 

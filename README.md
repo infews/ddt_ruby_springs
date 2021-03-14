@@ -2,7 +2,7 @@
 
 A "Tech Talk" presentation that adapts a blog post I wrote years ago called "Don't Desiccate your Tests" at the Pivotal Labs blog. 
 
-The idea is that by over DRY'ing your specs, you will add indirection that slows you down. Duplication in tests is fine. Moving tests around so that you are not over-testing is a way to have fewer tests and a faster test suite without sacrificing coverage.
+The idea is that by over DRY'ing your specs, you will add indirection that slows you down in the future. Duplication in tests is fine. Moving tests around so that you are not over-testing is a way to have fewer tests and a faster test suite without sacrificing coverage.
 
 This is a toy project. YMMV. _YMwillV_. But I hope this gives you some ideas on how to improve your suite.
 
@@ -24,20 +24,25 @@ The code is organized in 8 iterative steps. Each spec and implementation is scop
 # runs the entire suite
 > bundle exec rake                       
 
-# bash (MacOS <= 10.14)
-> bundle exec rake step[1] # runs the specs for step 1; (1..8).include?(step)
 
-# zsh (MacOS >= 10.15) 
-> noglob bundle exec rake step[1] # runs the specs for step 1; (1..8).include?(step)
+> bundle exec rake step_1 # runs the specs for step 1; (1..8).include?(step)
+
 ```
 
 ## Step 1
 
 A simple spec with an implicit `subject`.
 
-Implicit `subject` allows you to have simple, one-line specs that read nicely. But it is a bit of indirection, which in complicated code bases can be challenging.
+Implicit `subject` allows you to have simple, one-line specs. Rspec gives you wordy, but generated spec names.
 
 Notice the nesting of contexts, and the use of `before` blocks. This encourages one-line specs and re-use of the `before` blocks when appropriate.
+
+### Negatives
+
+- _"What am I testing again?"_ ...which can be hard with complex codebases.
+- Terse specs
+- Wordy spec names in output
+- Risk of method naming gymnastics to get nicely read specs
 
 ## Step 2
 
@@ -45,51 +50,79 @@ This is the same implementation, but the specs have moved to an explicit, or nam
 
 `ball.kick` is more descriptive than `subject.kick`
 
+### Negatives
+
+- Terse specs
+- Wordy spec names in output
+- Risk of method naming gymnastics to get nicely read specs
+
 ## Step 3
 
-Again, the same implementation. This moves to just using `let` for consistency. This is a tradeoff, for sure. Files will be "taller" with more indentation. But this favors being explicit in naming, nesting, and testing.
+Again, the same implementation. This moves to just using `let` for consistency & simplicity. Which leads to more explicit specs. 
+
+### Negatives
+
+- Have to write your own specs
+- Longer/taller files
 
 ## Step 4
 
-Adds another, very similar class, `PlaygroundBall` that has a little specialization. 
+Adds another, very similar class, `PlaygroundBall` that has a little specialization. Playground balls have a nostalgic smell, and there is now a sound when the balls are kicked.
 
 The only changes that are needed is the beginning call to `RSpec.describe` to call out the new class and some constants.
 
-Note that playground balls have a nostalgic smell, and there is now a sound when the balls are kicked.
+### Negatives
+
+- A lot of duplication in our spec files
+- MORE Longer/taller files
 
 ## Step 5
 
-- No implementation change.
-- Adds a shared context around inflation. 
-  
-File is getting shorter. But where is that context defined? You have to figure that out.
+No implementation change. We've added a shared context around inflation. Files are shorter.
+
+### Negatives
+
+- Where is "a ball that can be inflated" defined?
+- What does that mean again?
 
 ## Step 6
 
-- No implementation change.
-- Adds a shared context around kicking & deflation. 
-  
-File is nice and short. Very DRY. But what is the interface supposed to be again? And where are these examples defined?
+No implementation change. We've added another shared context, this time for kicking/deflation. Files is nice and short. Very DRY.
 
-This is where you might start to wonder about this being too much indirection.
+### Negatives
+
+- Where did we define these examples?
+- What interfaces do these examples test?
+- Lots of indirection
 
 ## Step 7
 
-- No _test_ changes.
-- Common functionality pulled into a super/base class `InflatableBall`.
+No _test_ changes. We've extracted some common functionality into a super/base class `InflatableBall`.
 
 This is a great example of tests helping with your refactoring. All the tests from Step 6 are green, so great, right?
+
+### Negatives
+
+- Where did we define these examples?
+- What interfaces do these examples test?
+- Lots of indirection
+- Lots of re-testing. Has it bought us anything?
 
 ## Step 8
 
 - Adds unit tests for `InflatableBall`
-- Adds `Game` as integration specs for leaf classes
-- Removes super class unit re-testing from leaf classes
-- Adds wiring test of hierarchy to leaf classes
+- Adds `Game` as integration specs for child classes (`SoccerBall` & `PlaygroundBall`)
+- Removes super class unit re-testing from child classes 
+- Adds wiring test of hierarchy to child classes
 
-Deleting tests that are green may feel weird, but this just moves them so you're testing as little as possible, while still being very explicit. 
+Deleting tests that are green may feel weird, but this just moves them so you're testing as little as possible, while still being very explicit. There are more, shorter files.
 
-Some "unit" values are only being testing in integration specs, but so what? This should keep the test suites faster while not limiting coverage.
+### Negatives & Compromises
+
+- More files (but they are shorter)
+- Indirection to implementation is explicit in the tests
+- Some "unit" testing (kick counts) are only tested in integration spec
+
 
 
 

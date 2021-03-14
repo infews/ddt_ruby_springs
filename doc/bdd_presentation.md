@@ -5,19 +5,40 @@ or
 
 Davis W. Frank
 
+^ Hi. I'm Davis. I'm a pal of JR's and he asked me here today to talk a bit about test factoring.
+
+^ I blogged on this topic several years ago but with JS. So I've converted this to Ruby and expanded it a bit.
+
+^ Moving on.
+
 ---
 
 [.header-strong: Font Awesome 5 Brands]
 
 # ____ _@dwfrank_
 # ____ _@infews_
+# _dwfrank@gmail.com_
 # __Blogs__ _@ [dwf.bigpencil.net](https://dwf.bigpencil.net)_
 
 Always a pivot.
 
-^ I'm Davis. I'll be your blatherer today. You can find my ravings here.
+^ Most folks know me from being at Pivotal Labs forever, or as the co-author of Jasmine, a once popular JS BDD framework. 
+
+^ But I've done some other things, too. Here are my social pointers & other ravings. 
+
+^ I've got a good blog series on Continuous Delivery going - comments and feedback welcome.
 
 ^ I have a little bit of intro, some toy examples, and then I'm happy to take ?'s
+
+---
+
+# [fit] Testing
+
+^ Let's talk about testing.
+
+^ The TL;DR is don't over-DRY your tests. You'll hate yourself for it.
+
+^ But what do I mean?
 
 ---
 
@@ -73,7 +94,7 @@ Always a pivot.
 
 # [fit] Or __months__
 
-^ in a very long time
+^ in a _very_ long time
 
 ---
 
@@ -97,7 +118,7 @@ end
 
 ^ When you see that old test code, it's not awful. But it's weird.
 
-^ How does your brain process this.
+^ How does your brain process this?
 
 ---
 
@@ -129,7 +150,13 @@ end
 
 ---
 
-> _How do you write BDD specs that make revisiting the past easy?_
+> _How do you write BDD specs that make it easy to revisit the past?_
+
+^ Tests are a product. 
+
+^ And they deserve to be designed well, just like any product.
+
+^ Who is the user?
 
 ---
 
@@ -137,9 +164,11 @@ end
 
 ![original](img/bt_keys.png)
 
+^ Well, it turns out...
+
 ---
 
-> Future you is a valid persona
+> "Future you" is a valid persona
 
 ---
 
@@ -170,8 +199,8 @@ end
 [.header: #000, Varela Round]
 [.header-emphasis: #ad0024, Varela Round]
 
-# [fit] AND NOW,
-### [fit] _SOME CODE._
+# [fit] AND NOW
+### [fit] _SOME CODE_
 
 ^ And now I've totally lost the theme.
 
@@ -185,7 +214,7 @@ end
 
 ---
 
-# [fit] Restated:
+# [fit] Restated
 
 1. Name things well and maintain them
 1. Few, simple shared examples
@@ -199,7 +228,9 @@ end
 
 ---
 
+# Citations
+
 - [Emoji-Driven Development in Ruby][edd]
-- 
+- Lovingly borrowed fair use images from around the web :wink:
 
 [edd]: https://medium.com/carwow-product-engineering/emoji-driven-development-in-ruby-2d54264f7b08

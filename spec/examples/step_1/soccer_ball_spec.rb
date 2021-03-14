@@ -1,6 +1,3 @@
-#  Step 1:
-# - implicit subject
-
 RSpec.describe Examples::Step1::SoccerBall do
   subject { Examples::Step1::SoccerBall.new }
 
@@ -43,7 +40,3 @@ RSpec.describe Examples::Step1::SoccerBall do
     end
   end
 end
-
-# implicit subject
-# explicit subject
-# just use let

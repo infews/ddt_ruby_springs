@@ -1,6 +1,3 @@
-#  Step 8:
-# - testing super class indepenently
-
 RSpec.describe Examples::Step8::InflatableBall do
   let(:ball) { Examples::Step8::InflatableBall.new }
 
