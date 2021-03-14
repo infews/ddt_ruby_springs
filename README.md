@@ -29,7 +29,7 @@ The code is organized in 8 iterative steps. Each spec and implementation is scop
 
 ```
 
-## Step 1
+## Step 1 - Implicit Subject
 
 A simple spec with an implicit `subject`.
 
@@ -44,7 +44,7 @@ Notice the nesting of contexts, and the use of `before` blocks. This encourages 
 - Wordy spec names in output
 - Risk of method naming gymnastics to get nicely read specs
 
-## Step 2
+## Step 2 - Explicit Subject
 
 This is the same implementation, but the specs have moved to an explicit, or named, `subject`. This reads nicely, allowing for more explicit use of the name when wanting to call methods.
 
@@ -56,7 +56,7 @@ This is the same implementation, but the specs have moved to an explicit, or nam
 - Wordy spec names in output
 - Risk of method naming gymnastics to get nicely read specs
 
-## Step 3
+## Step 3 - Let "Subject"
 
 Again, the same implementation. This moves to just using `let` for consistency & simplicity. Which leads to more explicit specs. 
 
@@ -65,7 +65,7 @@ Again, the same implementation. This moves to just using `let` for consistency &
 - Have to write your own specs
 - Longer/taller files
 
-## Step 4
+## Step 4 - Another Ball
 
 Adds another, very similar class, `PlaygroundBall` that has a little specialization. Playground balls have a nostalgic smell, and there is now a sound when the balls are kicked.
 
@@ -76,7 +76,7 @@ The only changes that are needed is the beginning call to `RSpec.describe` to ca
 - A lot of duplication in our spec files
 - MORE Longer/taller files
 
-## Step 5
+## Step 5 - One Shared Context
 
 No implementation change. We've added a shared context around inflation. Files are shorter.
 
@@ -85,7 +85,7 @@ No implementation change. We've added a shared context around inflation. Files a
 - Where is "a ball that can be inflated" defined?
 - What does that mean again?
 
-## Step 6
+## Step 6 - More Shared Contexts
 
 No implementation change. We've added another shared context, this time for kicking/deflation. Files is nice and short. Very DRY.
 
@@ -95,7 +95,7 @@ No implementation change. We've added another shared context, this time for kick
 - What interfaces do these examples test?
 - Lots of indirection
 
-## Step 7
+## Step 7 - Extract a Subclass
 
 No _test_ changes. We've extracted some common functionality into a super/base class `InflatableBall`.
 
@@ -108,7 +108,7 @@ This is a great example of tests helping with your refactoring. All the tests fr
 - Lots of indirection
 - Lots of re-testing. Has it bought us anything?
 
-## Step 8
+## Step 8 - More Explicit Testing
 
 - Adds unit tests for `InflatableBall`
 - Adds `Game` as integration specs for child classes (`SoccerBall` & `PlaygroundBall`)
