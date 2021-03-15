@@ -14,7 +14,7 @@ This is a toy project. YMMV. _YMwillV_. But I hope this gives you some ideas on 
 
 ## Presentation
 
-The deck lives in `./doc/bdd_presentation.md`. I generated a PDF for the talk, but I've removed any copyrighted images from the repo. 
+The deck lives in `./doc/bdd_presentation.md`. No PDF, sorry. 
 
 ## Code
 
